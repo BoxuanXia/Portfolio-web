@@ -19,7 +19,7 @@ export default function MapsPage() {
       {/* Page Header */}
       <section style={{
         background: "var(--background)",
-        padding: "60px 120px",
+        padding: "clamp(36px, 6vw, 60px) clamp(16px, 6vw, 120px)",
         display: "flex",
         flexDirection: "column",
         gap: "24px",
@@ -61,7 +61,7 @@ export default function MapsPage() {
       {/* Map Gallery Grid */}
       <section style={{
         background: "var(--surface-alt)",
-        padding: "80px 120px",
+        padding: "clamp(44px, 7vw, 80px) clamp(16px, 6vw, 120px)",
         display: "flex",
         flexDirection: "column",
         gap: "48px"
@@ -96,7 +96,7 @@ export default function MapsPage() {
         {/* Maps Grid */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(480px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
           gap: "32px"
         }}>
           {mapLibrary.map((map, idx) => (
@@ -109,7 +109,7 @@ export default function MapsPage() {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                height: "560px",
+                minHeight: "460px",
                 border: "1px solid var(--border)",
                 background: "var(--surface)",
                 overflow: "hidden",
@@ -128,7 +128,7 @@ export default function MapsPage() {
               {/* Map Image with Overlay */}
               <div style={{
                 width: "100%",
-                height: "320px",
+                height: "clamp(200px, 36vw, 320px)",
                 background: "var(--surface-subtle)",
                 overflow: "hidden",
                 position: "relative"
@@ -239,7 +239,7 @@ export default function MapsPage() {
       {/* Footer CTA */}
       <section style={{
         background: "var(--surface)",
-        padding: "80px 120px",
+        padding: "clamp(44px, 7vw, 80px) clamp(16px, 6vw, 120px)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

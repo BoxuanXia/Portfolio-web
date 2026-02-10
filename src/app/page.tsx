@@ -12,7 +12,7 @@ export default function Home() {
       {/* Hero Section */}
       <section style={{
         background: "var(--background)",
-        padding: "100px 120px",
+        padding: "clamp(56px, 9vw, 100px) clamp(16px, 6vw, 120px)",
         display: "flex",
         flexDirection: "column",
         gap: "32px"
@@ -44,7 +44,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
           style={{
-            fontSize: "72px",
+            fontSize: "clamp(34px, 7vw, 72px)",
             fontWeight: "500",
             letterSpacing: "-2px",
             color: "var(--text-primary)",
@@ -80,7 +80,8 @@ export default function Home() {
           transition={{ delay: 0.3, duration: 0.6 }}
           style={{
             display: "flex",
-            gap: "16px"
+            gap: "16px",
+            flexWrap: "wrap"
           }}
         >
           <Link href="/work" style={{ textDecoration: "none" }}>
@@ -121,7 +122,8 @@ export default function Home() {
           gap: "48px",
           paddingTop: "32px",
           borderTop: `1px solid var(--border)`,
-          marginTop: "24px"
+          marginTop: "24px",
+          flexWrap: "wrap"
         }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
             <div style={{
@@ -174,10 +176,11 @@ export default function Home() {
       {/* About Section with Headshot */}
       <section style={{
         background: "var(--surface-alt)",
-        padding: "100px 120px",
+        padding: "clamp(56px, 9vw, 100px) clamp(16px, 6vw, 120px)",
         display: "flex",
         gap: "80px",
-        alignItems: "center"
+        alignItems: "center",
+        flexWrap: "wrap"
       }}>
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -239,7 +242,7 @@ export default function Home() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ flex: 1, maxWidth: "400px" }}
+          style={{ flex: 1, maxWidth: "400px", minWidth: "min(100%, 280px)" }}
         >
           <img
             src={getAssetPath("/images/headshot.jpg")}
@@ -258,7 +261,7 @@ export default function Home() {
       {/* Featured Work Section */}
       <section style={{
         background: "var(--surface-alt)",
-        padding: "80px 120px",
+        padding: "clamp(44px, 7vw, 80px) clamp(16px, 6vw, 120px)",
         display: "flex",
         flexDirection: "column",
         gap: "48px"
@@ -304,15 +307,16 @@ export default function Home() {
               <div style={{
                 display: "flex",
                 gap: "40px",
-                height: "380px",
+                minHeight: "320px",
                 cursor: "pointer",
                 border: `1px solid var(--border)`,
                 background: "var(--surface)",
-                flexDirection: idx % 2 === 0 ? "row" : "row-reverse"
+                flexDirection: idx % 2 === 0 ? "row" : "row-reverse",
+                flexWrap: "wrap"
               }}>
                 <div style={{
-                  width: "480px",
-                  height: "380px",
+                  width: "min(100%, 480px)",
+                  height: "clamp(220px, 42vw, 380px)",
                   background: "var(--surface-subtle)",
                   flexShrink: 0,
                   overflow: "hidden"
@@ -335,7 +339,7 @@ export default function Home() {
                   flexDirection: "column",
                   justifyContent: "center",
                   gap: "20px",
-                  padding: "48px"
+                  padding: "clamp(20px, 4vw, 48px)"
                 }}>
                   <div style={{
                     color: "var(--accent)",
@@ -376,7 +380,7 @@ export default function Home() {
       {/* Archive Section */}
       <section style={{
         background: "var(--surface)",
-        padding: "80px 120px",
+        padding: "clamp(44px, 7vw, 80px) clamp(16px, 6vw, 120px)",
         display: "flex",
         flexDirection: "column",
         gap: "40px"
@@ -459,7 +463,7 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" style={{
         background: "var(--primary)",
-        padding: "100px 120px",
+        padding: "clamp(56px, 9vw, 100px) clamp(16px, 6vw, 120px)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -472,7 +476,7 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           style={{
-            fontSize: "48px",
+            fontSize: "clamp(30px, 6vw, 48px)",
             fontWeight: "500",
             color: "#FFFFFF",
             fontFamily: "var(--font-serif)",
@@ -546,7 +550,7 @@ export default function Home() {
       {/* Footer */}
       <footer style={{
         background: "#1A1A1A",
-        padding: "48px 120px 40px 120px",
+        padding: "clamp(28px, 5vw, 48px) clamp(16px, 6vw, 120px) clamp(24px, 4vw, 40px) clamp(16px, 6vw, 120px)",
         display: "flex",
         flexDirection: "column",
         gap: "40px",
@@ -556,7 +560,9 @@ export default function Home() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          width: "100%"
+          width: "100%",
+          flexWrap: "wrap",
+          rowGap: "16px"
         }}>
           <div style={{
             fontSize: "18px",
@@ -569,7 +575,8 @@ export default function Home() {
           </div>
           <div style={{
             display: "flex",
-            gap: "24px"
+            gap: "16px",
+            flexWrap: "wrap"
           }}>
             <a href="https://www.linkedin.com/in/boxuan-xia-4422a5127/" style={{
               fontSize: "13px",
@@ -607,7 +614,9 @@ export default function Home() {
           alignItems: "center",
           paddingTop: "24px",
           borderTop: "1px solid #282828",
-          width: "100%"
+          width: "100%",
+          flexWrap: "wrap",
+          rowGap: "8px"
         }}>
           <p style={{
             fontSize: "11px",

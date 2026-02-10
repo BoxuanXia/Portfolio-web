@@ -19,12 +19,14 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
         alignItems: "center",
         gap: "8px",
         height: "48px",
-        paddingLeft: "60px",
-        paddingRight: "60px",
+        paddingLeft: "clamp(16px, 4vw, 60px)",
+        paddingRight: "clamp(16px, 4vw, 60px)",
         backgroundColor: "var(--surface)",
         borderBottom: "1px solid var(--border)",
         fontSize: "14px",
         color: "var(--text-secondary)",
+        overflowX: "auto",
+        whiteSpace: "nowrap",
       }}
     >
       {items.map((item, index) => (

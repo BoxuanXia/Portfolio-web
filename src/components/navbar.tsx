@@ -27,9 +27,12 @@ export function NavBar() {
         borderBottom: "1px solid var(--border)",
         display: "flex",
         alignItems: "center",
-        paddingLeft: "60px",
-        paddingRight: "60px",
+        paddingLeft: "clamp(16px, 4vw, 60px)",
+        paddingRight: "clamp(16px, 4vw, 60px)",
         justifyContent: "space-between",
+        gap: "16px",
+        overflowX: "auto",
+        whiteSpace: "nowrap",
       }}
     >
       {/* Logo */}
@@ -47,7 +50,7 @@ export function NavBar() {
       </Link>
 
       {/* Nav Links */}
-      <div style={{ display: "flex", alignItems: "center", gap: "48px" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "clamp(14px, 3vw, 48px)", flexShrink: 0 }}>
         {navItems.map((item) => (
           <Link
             key={item.path}

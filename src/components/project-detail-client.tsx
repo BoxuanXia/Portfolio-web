@@ -34,7 +34,7 @@ export function ProjectDetail({
       {/* Hero Section */}
       <section style={{
         width: "100%",
-        height: "600px",
+        height: "clamp(240px, 46vw, 600px)",
         background: "var(--surface-subtle)",
         overflow: "hidden",
         position: "relative"
@@ -53,17 +53,19 @@ export function ProjectDetail({
       {/* Content Section */}
       <section style={{
         background: "var(--surface)",
-        padding: "80px 120px",
+        padding: "clamp(44px, 7vw, 80px) clamp(16px, 6vw, 120px)",
         display: "flex",
-        gap: "60px"
+        gap: "clamp(20px, 5vw, 60px)",
+        flexWrap: "wrap"
       }}>
         {/* Main Content */}
         <div style={{
           flex: 1,
-          maxWidth: "800px",
+          maxWidth: "min(100%, 800px)",
+          minWidth: "min(100%, 280px)",
           display: "flex",
           flexDirection: "column",
-          gap: "48px"
+          gap: "clamp(24px, 4vw, 48px)"
         }}>
           {/* Title & Description */}
           <motion.div
@@ -90,7 +92,7 @@ export function ProjectDetail({
                 </div>
               )}
               <h1 style={{
-                fontSize: "48px",
+                fontSize: "clamp(30px, 6vw, 48px)",
                 fontWeight: "500",
                 letterSpacing: "-1px",
                 color: "var(--text-primary)",
@@ -122,7 +124,8 @@ export function ProjectDetail({
             transition={{ delay: 0.1, duration: 0.6 }}
             style={{
               display: "flex",
-              gap: "48px",
+              gap: "clamp(18px, 4vw, 48px)",
+              flexWrap: "wrap",
               paddingTop: "24px",
               borderTop: "1px solid var(--border)"
             }}
@@ -220,13 +223,13 @@ export function ProjectDetail({
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
           style={{
-            width: "300px",
+            width: "min(100%, 300px)",
             flexShrink: 0,
             display: "flex",
             flexDirection: "column",
             gap: "32px",
-            position: "sticky",
-            top: "100px"
+            position: "relative",
+            top: 0
           }}
         >
           {/* Quick Links Card */}
@@ -351,11 +354,12 @@ export function ProjectDetail({
       {/* Back to Work CTA */}
       <section style={{
         background: "var(--surface-alt)",
-        padding: "60px 120px",
+        padding: "clamp(32px, 6vw, 60px) clamp(16px, 6vw, 120px)",
         display: "flex",
         alignItems: "center",
         gap: "20px",
-        borderTop: "1px solid var(--border)"
+        borderTop: "1px solid var(--border)",
+        flexWrap: "wrap"
       }}>
         <Link href="/work" style={{
           color: "var(--primary)",

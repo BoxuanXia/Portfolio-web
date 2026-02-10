@@ -19,7 +19,7 @@ export default function WorkPage() {
       {/* Page Header */}
       <section style={{
         background: "var(--background)",
-        padding: "60px 120px",
+        padding: "clamp(36px, 6vw, 60px) clamp(16px, 6vw, 120px)",
         display: "flex",
         flexDirection: "column",
         gap: "24px",
@@ -61,7 +61,7 @@ export default function WorkPage() {
       {/* Featured Work Section */}
       <section style={{
         background: "var(--surface-alt)",
-        padding: "80px 120px",
+        padding: "clamp(44px, 7vw, 80px) clamp(16px, 6vw, 120px)",
         display: "flex",
         flexDirection: "column",
         gap: "48px"
@@ -96,7 +96,7 @@ export default function WorkPage() {
         {/* Featured Projects Grid */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
           gap: "32px"
         }}>
           {featuredProjects.map((project, idx) => (
@@ -111,7 +111,7 @@ export default function WorkPage() {
                 <div style={{
                   display: "flex",
                   flexDirection: "column",
-                  height: "480px",
+                  minHeight: "430px",
                   cursor: "pointer",
                   border: "1px solid var(--border)",
                   background: "var(--surface)",
@@ -129,7 +129,7 @@ export default function WorkPage() {
                   {/* Image */}
                   <div style={{
                     width: "100%",
-                    height: "240px",
+                    height: "clamp(180px, 34vw, 240px)",
                     background: "var(--surface-subtle)",
                     overflow: "hidden"
                   }}>
@@ -195,7 +195,7 @@ export default function WorkPage() {
       {/* Archive Section */}
       <section style={{
         background: "var(--surface)",
-        padding: "80px 120px",
+        padding: "clamp(44px, 7vw, 80px) clamp(16px, 6vw, 120px)",
         display: "flex",
         flexDirection: "column",
         gap: "40px"
@@ -296,7 +296,7 @@ export default function WorkPage() {
       {/* Footer CTA */}
       <section style={{
         background: "var(--surface-alt)",
-        padding: "80px 120px",
+        padding: "clamp(44px, 7vw, 80px) clamp(16px, 6vw, 120px)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
