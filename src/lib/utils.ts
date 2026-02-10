@@ -3,7 +3,7 @@
  * This handles the basePath configuration for GitHub Pages deployment
  */
 export function getBasePath(): string {
-  return process.env.NODE_ENV === 'production' ? '/Portfolio-web' : '';
+  return process.env.NEXT_PUBLIC_BASE_PATH || '';
 }
 
 /**
