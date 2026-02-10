@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Keep the whole site in a tight 4-5 color palette:
+     stone / white / charcoal / gray / burgundy accent. */
+  --stone: #F7F7F7;
+  --background: var(--stone);
+  --foreground: #111111;
+  /* Typeface system (2 families + fallbacks). */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+
+  --accent-burgundy: #7A1C32;
+  --accent: var(--accent-burgundy);
+  --accent-hover: #651629;
+  --accent-soft: rgba(122, 28, 50, 0.08);
+
+  --primary: var(--accent);
+  --primary-light: var(--accent-soft);
+  --border: #E5E7EB;
+
+  --surface: #FFFFFF;
+  --surface-alt: #FAFAFA;
+  --surface-subtle: #F3F4F6;
+
+  --text-primary: #111111;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
+  --alert-warn: #F59E0B;
+  --alert-success: #10B981;
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --surface: #0A0A0A;
+  --surface-alt: #1A1A1A;
+  --border: #333333;
+  --text-primary: #FFFFFF;
+  --text-secondary: #CCCCCC;
+}
+
+body {
+  color: var(--text-primary);
+  background: var(--background);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
+}
+
+@layer base {
+  section {
+    color: var(--text-primary);
+  }
+
+  .accent-line {
+    width: 48px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .bullet-dot {
+    width: 7px;
+    height: 7px;
+    margin-top: 6px;
+    border-radius: 9999px;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .soft-card {
+    @apply rounded-lg border border-[var(--border)] bg-white shadow-[0_10px_40px_-24px_rgba(0,0,0,0.4)];
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Professional GIS Design System */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md bg-[var(--primary)] text-white px-6 py-3 text-sm font-medium transition-colors hover:opacity-90;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md bg-[var(--surface-alt)] text-[var(--text-primary)] px-6 py-3 text-sm font-medium transition-colors hover:bg-[var(--border)];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-md bg-transparent border border-[var(--primary)] text-[var(--primary)] px-6 py-3 text-sm font-medium transition-colors hover:bg-[var(--primary-light)];
+  }
+
+  .card {
+    @apply rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6;
+  }
+
+  .tag {
+    @apply inline-flex items-center rounded-full bg-[var(--surface-alt)] px-3 py-1 text-xs font-medium text-[var(--text-secondary)];
+  }
+}
