@@ -1,9 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import { AboutContent, AboutSection } from '@/data/about-content';
+import { getAssetPath } from '@/lib/utils';
 
 const viewport = { once: true, amount: 0.35 };
 
@@ -100,13 +100,11 @@ function Hero({ section }: { section: AboutSection }) {
           className="relative flex-1"
         >
           <div className="relative overflow-hidden rounded-2xl shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">
-            <Image
-              src={section.content.image || ''}
+            <img
+              src={section.content.image?.startsWith('http') ? section.content.image : getAssetPath(section.content.image || '')}
               alt="Portrait of Boxuan Xia"
-              width={900}
-              height={1100}
               className="h-full w-full object-cover"
-              priority
+              style={{ width: '900px', height: '1100px' }}
             />
             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[rgba(0,0,0,0.25)] to-[rgba(0,0,0,0.45)]" />
           </div>
@@ -175,12 +173,11 @@ function Foundation({ section }: { section: AboutSection }) {
             className="order-2 lg:order-1"
           >
             <div className="relative overflow-hidden rounded-xl shadow-[0_30px_70px_-40px_rgba(0,0,0,0.5)]">
-              <Image
-                src={section.content.image || ''}
+              <img
+                src={section.content.image?.startsWith('http') ? section.content.image : getAssetPath(section.content.image || '')}
                 alt="Campus and autumn trees"
-                width={1200}
-                height={900}
                 className="h-full w-full object-cover"
+                style={{ width: '1200px', height: '900px' }}
               />
             </div>
           </motion.div>
@@ -356,12 +353,11 @@ function Beyond({ section }: { section: AboutSection }) {
             className="relative"
           >
             <div className="relative overflow-hidden rounded-xl shadow-[0_30px_70px_-40px_rgba(0,0,0,0.5)]">
-              <Image
-                src={section.content.image || ''}
+              <img
+                src={section.content.image?.startsWith('http') ? section.content.image : getAssetPath(section.content.image || '')}
                 alt="City skyline"
-                width={1100}
-                height={820}
                 className="h-full w-full object-cover"
+                style={{ width: '1100px', height: '820px' }}
               />
             </div>
           </motion.div>

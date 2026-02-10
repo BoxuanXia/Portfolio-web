@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { featuredProjects, archiveProjects } from "@/lib/projects";
+import { getAssetPath } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -241,7 +242,7 @@ export default function Home() {
           style={{ flex: 1, maxWidth: "400px" }}
         >
           <img
-            src="/images/headshot.jpg"
+            src={getAssetPath("/images/headshot.jpg")}
             alt="Boxuan Xia"
             style={{
               width: "100%",
@@ -318,7 +319,7 @@ export default function Home() {
                 }}>
                   {project.image && (
                     <img
-                      src={project.image}
+                      src={getAssetPath(project.image)}
                       alt={project.title}
                       style={{
                         width: "100%",

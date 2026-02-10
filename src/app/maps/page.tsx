@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { mapLibrary } from "@/lib/maps";
+import { getAssetPath } from "@/lib/utils";
 
 export default function MapsPage() {
   const breadcrumbItems = [
@@ -133,7 +134,7 @@ export default function MapsPage() {
                 position: "relative"
               }}>
                 <img
-                  src={map.image}
+                  src={getAssetPath(map.image)}
                   alt={map.title}
                   style={{
                     width: "100%",

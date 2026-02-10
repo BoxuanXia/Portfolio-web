@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { getAssetPath } from "@/lib/utils";
 
 interface ProjectDetailProps {
   title: string;
@@ -26,7 +27,7 @@ export function ProjectDetail({
   link,
   content,
 }: ProjectDetailProps) {
-  const heroImage = image || "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1440&h=600&fit=crop";
+  const heroImage = image ? getAssetPath(image) : "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1440&h=600&fit=crop";
 
   return (
     <>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { featuredProjects, archiveProjects } from "@/lib/projects";
+import { getAssetPath } from "@/lib/utils";
 
 export default function WorkPage() {
   const breadcrumbItems = [
@@ -134,7 +135,7 @@ export default function WorkPage() {
                   }}>
                     {project.image && (
                       <img
-                        src={project.image}
+                        src={getAssetPath(project.image)}
                         alt={project.title}
                         style={{
                           width: "100%",
