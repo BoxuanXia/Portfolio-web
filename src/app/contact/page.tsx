@@ -37,48 +37,29 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitState({ status: 'loading', message: '' });
+    
+    // Create mailto link with form data
+    const mailtoLink = `mailto:xiab2503@gmail.com?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+    
+    // Open default email client
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    setSubmitState({
+      status: 'success',
+      message: "Your email client has been opened. Please send the email from there.",
+    });
 
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to send email');
-      }
-
-      setSubmitState({
-        status: 'success',
-        message: "Message sent successfully! I'll get back to you soon.",
-      });
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-
-      // Clear success message after 5 seconds
-      setTimeout(() => {
-        setSubmitState({ status: 'idle', message: '' });
-      }, 5000);
-    } catch (error) {
-      setSubmitState({
-        status: 'error',
-        message: error instanceof Error ? error.message : 'An error occurred while sending your message.',
-      });
-    }
+    // Clear success message after 5 seconds
+    setTimeout(() => {
+      setSubmitState({ status: 'idle', message: '' });
+    }, 5000);
   };
 
   return (
