@@ -112,3 +112,12 @@ html, body {
     @apply inline-flex items-center rounded-full bg-[var(--surface-alt)] px-3 py-1 text-xs font-medium text-[var(--text-secondary)];
   }
 }
+
+/* Home About image behavior:
+   - Hide on small screens to prevent it dominating viewport
+   - Keep a modest size on desktop */
+@media (max-width: 900px) {
+  .home-about-photo {
+    display: none;
+  }
+}

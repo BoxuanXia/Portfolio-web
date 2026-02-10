@@ -242,7 +242,8 @@ export default function Home() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ flex: 1, maxWidth: "400px", minWidth: "min(100%, 280px)" }}
+          className="home-about-photo"
+          style={{ flex: 1, maxWidth: "300px", minWidth: "260px" }}
         >
           <img
             src={getAssetPath("/images/headshot.jpg")}
