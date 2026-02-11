@@ -97,14 +97,13 @@ function Hero({ section }: { section: AboutSection }) {
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          className="relative flex-1"
+          className="relative hidden lg:block lg:flex-[0_0_320px] xl:flex-[0_0_380px]"
         >
-          <div className="relative overflow-hidden rounded-2xl shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">
+          <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">
             <img
               src={section.content.image?.startsWith('http') ? section.content.image : getAssetPath(section.content.image || '')}
               alt="Portrait of Boxuan Xia"
               className="h-full w-full object-cover"
-              style={{ width: '900px', height: '1100px' }}
             />
             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[rgba(0,0,0,0.25)] to-[rgba(0,0,0,0.45)]" />
           </div>
@@ -176,8 +175,7 @@ function Foundation({ section }: { section: AboutSection }) {
               <img
                 src={section.content.image?.startsWith('http') ? section.content.image : getAssetPath(section.content.image || '')}
                 alt="Campus and autumn trees"
-                className="h-full w-full object-cover"
-                style={{ width: '1200px', height: '900px' }}
+                className="h-auto max-h-[420px] w-full object-cover"
               />
             </div>
           </motion.div>
@@ -356,8 +354,7 @@ function Beyond({ section }: { section: AboutSection }) {
               <img
                 src={section.content.image?.startsWith('http') ? section.content.image : getAssetPath(section.content.image || '')}
                 alt="City skyline"
-                className="h-full w-full object-cover"
-                style={{ width: '1100px', height: '820px' }}
+                className="h-auto max-h-[420px] w-full object-cover"
               />
             </div>
           </motion.div>
